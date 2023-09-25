@@ -1,0 +1,76 @@
+Microsoft Windows [Version 10.0.19045.3448]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\usuario>python
+Python 3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import turtle
+>>> import random
+>>> s=turtle.getscreen()
+>>> player_one=turtle.Turtle()
+>>> player_one.color("green")
+>>> player_one.color("turtle")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Python311\Lib\turtle.py", line 2217, in color
+    pcolor = self._colorstr(pcolor)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\turtle.py", line 2697, in _colorstr
+    return self.screen._colorstr(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\turtle.py", line 1159, in _colorstr
+    raise TurtleGraphicsError("bad color string: %s" % str(color))
+turtle.TurtleGraphicsError: bad color string: turtle
+>>> >>> player_one.shape("turtle")
+  File "<stdin>", line 1
+    >>> player_one.shape("turtle")
+    ^^
+SyntaxError: invalid syntax
+>>> player_one.shape("turtle")
+>>> player_one.penup()
+>>> pleyer_one.goto(-200,100)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'pleyer_one' is not defined. Did you mean: 'player_one'?
+>>> player_one.goto(-200,100)
+>>> player_two=player_one.clone()
+>>> player_two.color("blue")
+>>> player_two.penup()
+>>> player_two.goto(-200,-100)
+>>> player_one.goto(300,60)
+>>> player_one.pendown()
+>>> player_one.circle(40)
+>>> player_one.penup()
+>>> player_two.goto(-200,-100)
+>>> player_one.goto(-200,-100)
+>>> player_one.goto(-200,100)
+>>> player_two.goto(300,-140)
+>>> player_two.pendown()
+>>> player_two.circle(40)
+>>> player_two.penup()
+>>> player_two.goto(-200,-100)
+>>> die=[1,2,3,4,5,6]
+>>> for i in range(20):
+...     if player_one.pos() >= (300,100):
+...             print("Player One Wins!")
+...             break
+...     elif player_two.pos() >= (300,-100):
+...             print("Player Two Wins!")
+...             break
+...     else:
+...             player_one_turn = input("Press 'Enter' to roll the die ")
+...             die_outcome = random.choice(die)
+...             print("The result of the die roll is: ")
+...             print(die_outcome)
+...             print("The number of steps will be: ")
+...             print(20*die_outcome)
+...             player_one.fd(20*die_outcome)
+...             player_two_turn = input("Press 'Enter' to roll the die ")
+...             die_outcome = random.choice(die)
+...             print("The result of the die roll is: ")
+...             print(die_outcome)
+...             print("The number of steps will be: ")
+...             print(20*die_outcome)
+...             player_two.fd(20*die_outcome)
+
+
